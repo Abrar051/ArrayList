@@ -30,8 +30,39 @@ public class DynamicArray {
         return false;
     }
 
+    public void put2 (int index , String obj)
+    {
+        int length=this.data.length;
+        int newArraySize =0;
+        if (index<this.data.length)
+        {
+            add(null);
+            for (int i =this.data.length-1;i>=index;i--)
+            {
+                data[i]=data[i-1];
+            }
+            data[index-1]=obj;
+        }
+        else if (index==this.data.length-1)
+        {
+            add(null);
+            data[index-1]=obj;
+            //add("special");
+        }
+        else if (index>this.data.length)
+        {
+            for (int i=this.data.length-1;i<index;i++)
+            {
+                add(null);
+                if (i==(index-1))
+                {
+                    data[i]=obj;
+                }
+            }
+        }
+    }
 
-    public void put(int index, String obj) {
+   public void put(int index, String obj) {
         int arrayLength = this.data.length;
         int newArraySize = 0;
         if(index > arrayLength)
@@ -39,9 +70,9 @@ public class DynamicArray {
              newArraySize = this.countNewArraySize(arrayLength, index);
         }
         else {
-            if(this.data[index-1] == null)
+            if(this.data[index] == null)
             {
-                this.data[index-1] = obj;
+                this.data[index] = obj;
                 return;
             }else {
                 newArraySize = arrayLength+5;
@@ -68,7 +99,7 @@ public class DynamicArray {
                 newArray[i] = this.data[i];
             }
             else {
-                newArray[i+1] = this.data[i];
+                newArray[i] = this.data[i-1];
             }
         }
         return newArray;
@@ -79,11 +110,9 @@ public class DynamicArray {
         return new String[size];
     }
 
-
-
     private int countNewArraySize(int arrayLength, int index) {
         for (int i=arrayLength; i< index; i++){
-            arrayLength+=5;
+            arrayLength+=2;
         }
         return arrayLength;
     }
