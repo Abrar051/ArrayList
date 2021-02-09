@@ -1,5 +1,7 @@
+package DynamicArray;
+
 import java.util.Arrays;
-import java.util.Scanner;
+
 public class DynamicArray {
     public int length;
     String[] data;
@@ -30,7 +32,7 @@ public class DynamicArray {
         return false;
     }
 
-    public void put2 (int index , String obj)
+    /*public void put2 (int index , String obj)
     {
         int length=this.data.length;
         int newArraySize =0;
@@ -60,7 +62,7 @@ public class DynamicArray {
                 }
             }
         }
-    }
+    }*/
 
    public void put(int index, String obj) {
         int arrayLength = this.data.length;

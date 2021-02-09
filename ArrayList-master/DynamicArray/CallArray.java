@@ -1,6 +1,7 @@
-///Dynamic array
+package DynamicArray;///Dynamic array
 
 import java.util.Scanner;
+
 public class CallArray {
     public static void main (String args[]){
         Scanner input = new Scanner(System.in);

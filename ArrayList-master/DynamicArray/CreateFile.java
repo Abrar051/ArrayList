@@ -1,5 +1,7 @@
-import java.io.File;  // Import the File class
-import java.io.IOException;  // Import the IOException class to handle errors
+package DynamicArray;
+
+import java.io.File;
+import java.io.IOException;
 
 public class CreateFile {
     public static void main(String[] args) {
