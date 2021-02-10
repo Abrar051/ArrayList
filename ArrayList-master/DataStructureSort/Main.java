@@ -19,6 +19,15 @@ public class Main {
             }
         }
         obj.printMain();
-        obj.printTemp();
+        obj.pop();
+        obj.printMain();
+        obj.pop();
+        obj.printMain();
+        obj.pop();
+        obj.printMain();
+        obj.pop();
+        obj.printMain();
+        obj.push("add");
+        obj.printMain();
     }
 }

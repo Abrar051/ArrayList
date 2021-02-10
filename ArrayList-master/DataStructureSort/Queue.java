@@ -1,6 +1,6 @@
 package DataStructureSort;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Queue {
     private String array[];
@@ -30,20 +30,32 @@ public class Queue {
         array[size] = element;
         size++;
     }
-    public void pop (String obj)
+    public void pop ()
     {
-        String[] temp = sort();
-        for (int i=0;i<sort().length;i++)
+        int step=1;
+        while (true)
         {
-            if (temp[i].equals(obj))
+            if (array[array.length-step]==null)
             {
-                temp[i]=null;
+                step++;
+            }
+            else
+            {
+                break;
             }
         }
+        array[array.length-step]=null;
     }
     public void push (String obj)
     {
-
+        for (int i=0;i< array.length;i++)
+        {
+            if (array[i]==null)
+            {
+                array[i]=obj;
+                break;
+            }
+        }
     }
     private String[] sort ()
     {
@@ -62,6 +74,22 @@ public class Queue {
     public void printTemp ()
     {
         System.out.println(Arrays.toString(sort()));
+    }
+    private void nullRemove ()
+    {
+        String[] temp = new String[array.length];
+        for (int i=0;i< array.length;i++)
+        {
+            if (array[i]==null)
+            {
+                break;
+            }
+            else
+            {
+                temp[i]=array[i];
+            }
+        }
+        //array=Arrays.copyOf(temp);
     }
 
 }
