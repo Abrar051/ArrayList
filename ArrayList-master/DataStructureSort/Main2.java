@@ -16,20 +16,32 @@ public class Main2 {
         {
             System.out.println("Enter 1 to pop else string to push ");
             String str = input.next();
-            if (str.equals("1"))
+            if (str.equals("1")) ////////pop
             {
                 data[0]=null;
                 obj.sort(data);
                 System.out.println(Arrays.toString(data));
                 //data[0]=null;
             }
+            else if (str.equals("b"))
+            {
+                break;
+            }
             else
             {
-                /*if (data[index]!=null)
+                for (int i=0;i<5;i++)
                 {
-                    data[index]=str;
-                    System.out.println(Arrays.toString(data));
-                }*/
+                    if (data[i]!=null)
+                    {
+                        continue;
+                    }
+                    if (data[i]==null)
+                    {
+                        data[i]=str;
+                        System.out.println(Arrays.toString(data));
+                        break;
+                    }
+                }
             }
         }
     }
