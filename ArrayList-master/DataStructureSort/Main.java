@@ -19,15 +19,25 @@ public class Main {
             }
         }
         obj.printMain();
-        obj.pop();
-        obj.printMain();
-        obj.pop();
-        obj.printMain();
-        obj.pop();
-        obj.printMain();
-        obj.pop();
-        obj.printMain();
-        obj.push("add");
+        System.out.println("For pop enter 1 for push enter string for break enter b : ");
+        while (true)
+        {
+            String str = input.next();
+            if (str.equals("b"))
+            {
+                break;
+            }
+            else if (str.equals("1"))
+            {
+                obj.pop();
+                obj.printMain();
+            }
+            else
+            {
+                obj.push(str);
+                obj.printMain();
+            }
+        }
         obj.printMain();
     }
 }

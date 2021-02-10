@@ -45,6 +45,7 @@ public class Queue {
             }
         }
         array[array.length-step]=null;
+        nullRemove();
     }
     public void push (String obj)
     {
@@ -55,9 +56,15 @@ public class Queue {
                 array[i]=obj;
                 break;
             }
+            else
+            {
+                System.out.println("iuiuyiy");
+                add(obj);
+                break;
+            }
         }
     }
-    private String[] sort ()
+    /*private String[] sort ()
     {
         int length = this.array.length;
         String[] temp = new String[length];
@@ -66,19 +73,28 @@ public class Queue {
             temp [array.length-i-1]=array[i];
         }
         return temp;
-    }
+    }*/
     public void printMain ()
     {
         System.out.println(Arrays.toString(array));
     }
-    public void printTemp ()
-    {
-        System.out.println(Arrays.toString(sort()));
-    }
     //
+    public void sort (String[] obj)
+    {
+        String temp;
+        int length=1;
+        for (int i=1;i<obj.length;i++)
+        {
+            temp=obj[i];
+            obj[i]=obj[i-1];
+            obj[i-1]=temp;
+        }
+        //obj[length-1]=null;
+    }
     private void nullRemove ()
     {
         String[] temp = new String[array.length];
+        int length=0;
         for (int i=0;i< array.length;i++)
         {
             if (array[i]==null)
@@ -88,9 +104,10 @@ public class Queue {
             else
             {
                 temp[i]=array[i];
+                length++;
             }
         }
-        //array=Arrays.copyOf(temp);
+        array=Arrays.copyOf(temp,temp.length);
     }
 
 }
