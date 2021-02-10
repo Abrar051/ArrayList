@@ -11,9 +11,8 @@ public class DynamicArray {
         size=0;
         capacity=2;
     }
-    /* method to increase the capacity, if necessary, to ensure it can hold at least the
-     *  number of elements specified by minimum capacity arguement
-     */
+
+
     public void ensureCapacity(int minCapacity){
         String temp[] = new String[capacity+minCapacity];
         for (int i=0; i < capacity; i++){
@@ -42,26 +41,26 @@ public class DynamicArray {
 
     public void put (int index , String obj)
     {
-        add (null);
+
         if (index<array.length)
         {
-            if (index==0)
-            {
-                index++;
-                for (int i=array.length-1;i>=index;i--)
+                add (null);
+                if (index==0)
                 {
-                    array[i]=array[i-1];
+                    for (int i=array.length-1;i>index;i--)
+                    {
+                        array[i]=array[i-1];
+                    }
+                    array[index]=obj;
                 }
-                array[index-1]=obj;
-            }
-            else
-            {
-                for (int i=array.length-1;i>=index;i--)
+                else
                 {
-                    array[i]=array[i-1];
+                    for (int i=array.length-1;i>=index;i--)
+                    {
+                        array[i]=array[i-1];
+                    }
+                    array[index-1]=obj;
                 }
-                array[index-1]=obj;
-            }
         }
         else if (index> array.length)
         {

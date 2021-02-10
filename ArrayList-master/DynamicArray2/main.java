@@ -24,6 +24,9 @@ public class main {
         obj.put(0,"0");
         obj.put(11,"11");
         obj.put(14,"14");
+        obj.put (20,"20");
+        obj.put(10,"10");
+        obj.put(6,"6");
         obj.printArrray();
     }
 }
