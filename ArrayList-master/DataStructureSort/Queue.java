@@ -79,9 +79,14 @@ public class Queue {
         System.out.println(Arrays.toString(array));
     }
     //
-    public void sort (String[] obj)
+    public String pop (String[] obj)
+    {
+        return obj[0];
+    }
+    public void rearrange (String[] obj)
     {
         String temp;
+        obj[0]=null;
         int length=1;
         for (int i=1;i<obj.length;i++)
         {

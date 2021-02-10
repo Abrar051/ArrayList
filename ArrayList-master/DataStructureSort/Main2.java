@@ -18,10 +18,9 @@ public class Main2 {
             String str = input.next();
             if (str.equals("1")) ////////pop
             {
-                data[0]=null;
-                obj.sort(data);
+                System.out.println("Your popped data is : "+obj.pop(data));
+                obj.rearrange(data);
                 System.out.println(Arrays.toString(data));
-                //data[0]=null;
             }
             else if (str.equals("b"))
             {
