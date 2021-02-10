@@ -28,19 +28,7 @@ public class Main2 {
             }
             else
             {
-                for (int i=0;i<5;i++)
-                {
-                    if (data[i]!=null)
-                    {
-                        continue;
-                    }
-                    if (data[i]==null)
-                    {
-                        data[i]=str;
-                        System.out.println(Arrays.toString(data));
-                        break;
-                    }
-                }
+                obj.push(str,data);
             }
         }
     }

@@ -47,7 +47,7 @@ public class Queue {
         array[array.length-step]=null;
         nullRemove();
     }
-    public void push (String obj)
+    /*public void push (String obj)
     {
         for (int i=0;i< array.length;i++)
         {
@@ -63,7 +63,7 @@ public class Queue {
                 break;
             }
         }
-    }
+    }*/
     /*private String[] sort ()
     {
         int length = this.array.length;
@@ -82,6 +82,22 @@ public class Queue {
     public String pop (String[] obj)
     {
         return obj[0];
+    }
+    public void push (String str, String[] data)
+    {
+        for (int i=0;i<5;i++)
+        {
+            if (data[i]!=null)
+            {
+                continue;
+            }
+            if (data[i]==null)
+            {
+                data[i]=str;
+                System.out.println(Arrays.toString(data));
+                break;
+            }
+        }
     }
     public void rearrange (String[] obj)
     {

@@ -34,7 +34,7 @@ public class Main {
             }
             else
             {
-                obj.push(str);
+                //obj.push(str);
                 obj.printMain();
             }
         }
