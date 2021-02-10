@@ -30,11 +30,18 @@ public class Queue {
         array[size] = element;
         size++;
     }
-    public void push (String obj)
-    {
-
-    }
     public void pop (String obj)
+    {
+        String[] temp = sort();
+        for (int i=0;i<sort().length;i++)
+        {
+            if (temp[i].equals(obj))
+            {
+                temp[i]=null;
+            }
+        }
+    }
+    public void push (String obj)
     {
 
     }
