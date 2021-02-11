@@ -30,22 +30,21 @@ public class Queue {
         array[size] = element;
         size++;
     }
-    public void pop ()
+    public String[] getData ()
     {
-        int step=1;
-        while (true)
+        return array;
+    }
+    public void pop (String[] obj)
+    {
+        String temp;
+        obj[0]=null;
+        int length=1;
+        for (int i=1;i<obj.length;i++)
         {
-            if (array[array.length-step]==null)
-            {
-                step++;
-            }
-            else
-            {
-                break;
-            }
+            temp=obj[i];
+            obj[i]=obj[i-1];
+            obj[i-1]=temp;
         }
-        array[array.length-step]=null;
-        nullRemove();
     }
     /*public void push (String obj)
     {
@@ -79,13 +78,15 @@ public class Queue {
         System.out.println(Arrays.toString(array));
     }
     //
-    public String pop (String[] obj)
+    public String popData (String[] obj)
     {
-        return obj[0];
+        String str = obj[0];
+        pop(obj);
+        return str;
     }
     public void push (String str, String[] data)
     {
-        for (int i=0;i<5;i++)
+        for (int i=0;i<data.length;i++)
         {
             if (data[i]!=null)
             {

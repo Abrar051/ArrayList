@@ -22,19 +22,19 @@ public class Main {
         System.out.println("For pop enter 1 for push enter string for break enter b : ");
         while (true)
         {
-            String str = input.next();
-            if (str.equals("b"))
+            String str1 = input.next();
+            if (str1.equals("b"))
             {
                 break;
             }
-            else if (str.equals("1"))
+            else if (str1.equals("1"))
             {
-                obj.pop();
+                System.out.println("Your popped data is : "+obj.popData(obj.getData()));
                 obj.printMain();
             }
             else
             {
-                //obj.push(str);
+                obj.push(str1, obj.getData());
                 obj.printMain();
             }
         }
