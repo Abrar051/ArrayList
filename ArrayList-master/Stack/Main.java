@@ -6,15 +6,13 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String str;
         Stack obj = new Stack();
-        obj.input();
-        obj.printData();
         while (true)
         {
             obj.popPush();
             str= input.next();
             if (str.equals("1"))
             {
-                obj.pop2();
+                obj.pop();
                 obj.printData();
             }
             else

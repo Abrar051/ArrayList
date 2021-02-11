@@ -3,6 +3,7 @@ import java.util.*;
 public class Stack {
     String[] array = new String[5];
     int nullCount=0;
+    int indexCounter=0;
     Scanner input = new Scanner(System.in);
     public void input ()
     {
@@ -26,75 +27,38 @@ public class Stack {
     }
     public void push (String obj)
     {
-        for (int i=0;i<this.array.length;i++)
+        if (this.array[this.indexCounter]==null)
         {
-            if (this.array[i]==null)
-            {
-                this.array[i]=obj;
-                break;
-            }
-        }
-        System.out.println(Arrays.toString(array));
-    }
-    public String pop2 ()
-    {
-        String temp=null;
-        if ((this.nullCount-1)==this.array.length)
-        {
-            System.out.println("Index full of null ");
+            this.array[this.indexCounter]=obj;
         }
         else
         {
-            if (this.array[0]==null)
+            this.indexCounter++;
+            if (this.indexCounter==(array.length))
             {
-                this.nullCount=0;
+                this.indexCounter=0;
             }
-            else
-            {
-                temp = this.array[this.array.length-this.nullCount-1];
-                this.array[this.array.length-this.nullCount-1]=null;
-                this.nullCount++;
-            }
+            this.array[this.indexCounter]=obj;
         }
-        return temp;
+        if (indexCounter== array.length)
+        {
+            indexCounter=0;
+        }
+        System.out.println(Arrays.toString(array));
     }
     public String pop ()
     {
-        String temp = null;
-        int nullCounter=0;
-        int pureLength=1;
-        for (int i=0;i< array.length;i++)
+        String temp = this.array[indexCounter];
+        if (indexCounter==0)
         {
-            if (this.array[i]==null)
-            {
-                if (i==0)
-                {
-                    System.out.println("Array out of index ");
-                    break;
-                }
-                else
-                {
-                    nullCounter++;
-                    if (nullCounter==1)
-                    {
-                        temp=this.array[i-1];
-                        this.array[i-1]=null;
-                        break;
-                    }
-                }
-
-            }
-            else
-            {
-                pureLength++;
-            }
+            System.out.println("Array out of index");
         }
-        if (nullCounter==0)
+        else
         {
-            temp=this.array[array.length-1];
-            this.array[array.length-1]=null;
-            return temp;
+            this.array[indexCounter]=null;
+            indexCounter--;
         }
         return temp;
     }
+
 }
