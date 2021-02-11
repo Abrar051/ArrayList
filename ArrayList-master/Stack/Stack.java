@@ -2,6 +2,7 @@ package Stack;
 import java.util.*;
 public class Stack {
     String[] array = new String[5];
+    int nullCount=0;
     Scanner input = new Scanner(System.in);
     public void input ()
     {
@@ -34,6 +35,28 @@ public class Stack {
             }
         }
         System.out.println(Arrays.toString(array));
+    }
+    public String pop2 ()
+    {
+        String temp=null;
+        if ((this.nullCount-1)==this.array.length)
+        {
+            System.out.println("Index full of null ");
+        }
+        else
+        {
+            if (this.array[0]==null)
+            {
+                this.nullCount=0;
+            }
+            else
+            {
+                temp = this.array[this.array.length-this.nullCount-1];
+                this.array[this.array.length-this.nullCount-1]=null;
+                this.nullCount++;
+            }
+        }
+        return temp;
     }
     public String pop ()
     {

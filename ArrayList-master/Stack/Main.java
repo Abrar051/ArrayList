@@ -14,7 +14,7 @@ public class Main {
             str= input.next();
             if (str.equals("1"))
             {
-                obj.pop();
+                obj.pop2();
                 obj.printData();
             }
             else
