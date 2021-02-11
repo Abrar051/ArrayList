@@ -86,17 +86,29 @@ public class Queue {
     }
     public void push (String str, String[] data)
     {
+        int objectCounter=0;
         for (int i=0;i<data.length;i++)
         {
             if (data[i]!=null)
             {
                 continue;
             }
-            if (data[i]==null)
+            else if (data[i]==null)
             {
                 data[i]=str;
                 System.out.println(Arrays.toString(data));
                 break;
+            }
+        }
+        for (int i=0;i< data.length;i++)
+        {
+            if (data[i]!=null)
+            {
+                objectCounter++;
+            }
+            if (objectCounter == data.length)
+            {
+                add(str);
             }
         }
     }
