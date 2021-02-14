@@ -34,7 +34,7 @@ public class Queue {
     {
         return array;
     }
-    public void pop (String[] obj)
+    public void pop (String[] obj)   // this pop method picks element from first and replace null and bings the null at last position
     {
         String temp;
         obj[0]=null;
@@ -46,6 +46,15 @@ public class Queue {
             obj[i-1]=temp;
         }
     }
+    public void pop2 (String[] obj)
+    {
+        String temp;
+
+    }
+
+
+
+
     /*public void push (String obj)
     {
         for (int i=0;i< array.length;i++)
