@@ -11,6 +11,5 @@ public class Fact {
         {
             return n*factorial(n-1);
         }
-        //return n;
     }
 }
