@@ -61,8 +61,6 @@ public class BinaryTree {
             {
                 obj[positionCounter-1].printParent();
             }
-
-
         }
     }
 }
