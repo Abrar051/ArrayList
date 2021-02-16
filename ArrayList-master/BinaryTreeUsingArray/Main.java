@@ -17,7 +17,7 @@ public class Main {
             }
             else if (str.equals("p"))
             {
-
+                obj.printData();
             }
             else if (str.equals("r"))
             {
@@ -31,9 +31,9 @@ public class Main {
             {
                 System.out.println("Enter index number : ");
                 int index = input.nextInt();
+                object[index-1]=new InfoHolder(str,index-1);
                 obj.add(str,index);
             }
         }
-        indexCounter++;
     }
 }

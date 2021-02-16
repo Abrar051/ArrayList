@@ -8,8 +8,12 @@ public class InfoHolder {
         this.array=str;
         this.index=index;
     }
-    public void printData ()
+    public void printParent ()
     {
-        System.out.println();
+        System.out.println("Parent of the child is : "+this.array);
+    }
+    public void printGrandParent ()
+    {
+        System.out.println("Grandparent of the child is : "+this.array);
     }
 }
