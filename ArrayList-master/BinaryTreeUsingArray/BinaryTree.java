@@ -30,27 +30,39 @@ public class BinaryTree {
         System.out.println("Child is : "+str);
         int nodeCounter = 0;
         int positionCounter=0;
+        int parentPosition=0;
+        int temp;
+        int gen=1;
         for (int i=0;i<arraySize;i++)
         {
-            if (this.array[i].equals(str))
+            if (this.array[i]==null)
+            {
+                System.out.println("Index null");
+                break;
+            }
+            else if (this.array[i].equals(str))
             {
                 nodeCounter = (int) (Math.log10(i+1)/Math.log10(2))+1;
-                positionCounter = i;
+                positionCounter = i+1;
                 System.out.println("Node is : "+nodeCounter);
                 break;
             }
-            //for (int i=0;i)
         }
-        for (int i=0;i<nodeCounter;i++)
-        {
-            if (positionCounter%2==0)
-            {
 
+        while (true)
+        {
+            positionCounter=positionCounter/2;
+            if (positionCounter==1)
+            {
+                obj[0].printParent();
+                break;
             }
             else
             {
-                int parentPosition ;
+                obj[positionCounter-1].printParent();
             }
+
+
         }
     }
 }
