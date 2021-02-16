@@ -25,8 +25,19 @@ public class BinaryTree {
     {
 
     }
-    public void printData ()
+    public void printData (String str)
     {
-        System.out.println(Arrays.toString(this.array));
+        System.out.println("Child is : "+str);
+        int nodeCounter = 0;
+        for (int i=0;i<7;i++)
+        {
+            if (this.array[i].equals(str))
+            {
+                nodeCounter = (int) (Math.log10(i)/Math.log10(2));
+                break;
+            }
+        }
+        obj[nodeCounter].printParent();
+        obj[nodeCounter-1].printGrandParent();
     }
 }

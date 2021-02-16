@@ -6,7 +6,6 @@ public class Main {
         int indexCounter=0;
         Scanner input = new Scanner(System.in);
         BinaryTree obj = new BinaryTree();
-        InfoHolder[] object = new InfoHolder[7];
         while (true)
         {
             System.out.println("Enter string : ");
@@ -17,7 +16,9 @@ public class Main {
             }
             else if (str.equals("p"))
             {
-                obj.printData();
+                System.out.println("Enter string to check info : ");
+                String child = input.next();
+                obj.printData(child);
             }
             else if (str.equals("r"))
             {
@@ -31,7 +32,6 @@ public class Main {
             {
                 System.out.println("Enter index number : ");
                 int index = input.nextInt();
-                object[index-1]=new InfoHolder(str,index-1);
                 obj.add(str,index);
             }
         }
