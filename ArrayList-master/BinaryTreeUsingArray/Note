@@ -1,0 +1,27 @@
+Binary search tree
+
+        1
+       / \
+      2   3
+     /\   /\
+    4 5  6  7
+
+ 0       1 2     3 4 5 6
+ 1       2 3     4 5 6 7
+ |        |         |
+2^(1-1) 2^(2-1)  2^(3-1)
+
+2^(n-1) here n is the node number
+and 2^(n-1) is the available slot for every member
+
+control loop from 0 to 2^(n-1)
+index indicator 1-1 , 2-1 , 4-1 , 8-1 (position indicator)
+position indicator (2^(n-1))-1       {n=1,2,3,4,5......}   here position indicator is the starting position
+n is the node number
+
+parent , child , grand child indicator
+
+3 nodes , 3 generation
+under node 1 1 person (parent)  2^0          (n-1) n =1 node 1
+under node 2 2 child (child)    2^1          (n-1) n =2 node 2
+under node 3 4 grandchild (grandchild)  2^2  (n-1) n =3 node 3
