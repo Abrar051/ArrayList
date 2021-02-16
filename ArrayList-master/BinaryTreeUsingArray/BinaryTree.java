@@ -1,14 +1,14 @@
 package BinaryTreeUsingArray;
 import java.util.*;
 public class BinaryTree {
-
-    String[] array = new String[7];
+    public int arraySize=15;
+    String[] array = new String[arraySize];
     public int treeIndex;
     //n node indicator
-    InfoHolder[] obj = new InfoHolder[7];
+    InfoHolder[] obj = new InfoHolder[arraySize];
     public void add (String str , int index)
     {
-        if ((index-1)<0 || (index-1)>6)
+        if ((index-1)<0 || (index-1)>(arraySize-1))
         {
             System.out.println("Array is out of index");
         }
@@ -29,15 +29,28 @@ public class BinaryTree {
     {
         System.out.println("Child is : "+str);
         int nodeCounter = 0;
-        for (int i=0;i<7;i++)
+        int positionCounter=0;
+        for (int i=0;i<arraySize;i++)
         {
             if (this.array[i].equals(str))
             {
-                nodeCounter = (int) (Math.log10(i)/Math.log10(2));
+                nodeCounter = (int) (Math.log10(i+1)/Math.log10(2))+1;
+                positionCounter = i;
+                System.out.println("Node is : "+nodeCounter);
                 break;
             }
+            //for (int i=0;i)
         }
-        obj[nodeCounter].printParent();
-        obj[nodeCounter-1].printGrandParent();
+        for (int i=0;i<nodeCounter;i++)
+        {
+            if (positionCounter%2==0)
+            {
+
+            }
+            else
+            {
+                int parentPosition ;
+            }
+        }
     }
 }
