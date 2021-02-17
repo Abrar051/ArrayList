@@ -3,6 +3,7 @@ import java.util.*;
 public class BinaryTree {
     public int arraySize=8;
     String[] array = new String[arraySize];
+    int nodeCounter = 0;
     public int treeIndex;
     //n node indicator
     InfoHolder[] obj = new InfoHolder[arraySize];
@@ -33,6 +34,7 @@ public class BinaryTree {
             {
                 System.out.print("   ");
             }
+
             System.out.print(array[array.length-i]);
             System.out.println();
         }
@@ -40,7 +42,6 @@ public class BinaryTree {
     public void printData (String str)
     {
         System.out.println("Child is : "+str);
-        int nodeCounter = 0;
         int positionCounter=0;
         int parentPosition=0;
         int temp;
@@ -56,7 +57,7 @@ public class BinaryTree {
             {
                 nodeCounter = (int) (Math.log10(i+1)/Math.log10(2))+1;
                 positionCounter = i+1;
-                System.out.println("Node is : "+nodeCounter);
+                System.out.println("Level is : "+nodeCounter);
                 break;
             }
         }

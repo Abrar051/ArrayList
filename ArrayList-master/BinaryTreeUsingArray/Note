@@ -25,3 +25,10 @@ parent , child , grand child indicator
 under node 1 1 person (parent)  2^0          (n-1) n =1 node 1
 under node 2 2 child (child)    2^1          (n-1) n =2 node 2
 under node 3 4 grandchild (grandchild)  2^2  (n-1) n =3 node 3
+
+
+Printing system
+member number = 2^(level-1)
+Starting number = member number -1
+loop from 1 - 2^(level-1)
+print array[2^(level-1)-i]
