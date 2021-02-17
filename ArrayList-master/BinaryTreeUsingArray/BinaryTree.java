@@ -1,7 +1,7 @@
 package BinaryTreeUsingArray;
 import java.util.*;
 public class BinaryTree {
-    public int arraySize=15;
+    public int arraySize=8;
     String[] array = new String[arraySize];
     public int treeIndex;
     //n node indicator
@@ -27,9 +27,14 @@ public class BinaryTree {
     }
     public void printTree ()
     {
-        for (int i=array.length;i>=0;i--)
+        for (int i=array.length;i>0;i--)
         {
-            System.out.println(" ");
+            for (int j=1;j<i;j++)
+            {
+                System.out.print("   ");
+            }
+            System.out.print(array[array.length-i]);
+            System.out.println();
         }
     }
     public void printData (String str)

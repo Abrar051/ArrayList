@@ -28,6 +28,10 @@ public class Main {
             {
 
             }
+            else if (str.equals("showTree"))
+            {
+                obj.printTree();
+            }
             else
             {
                 System.out.println("Enter index number : ");
