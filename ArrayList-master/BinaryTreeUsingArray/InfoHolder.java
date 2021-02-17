@@ -12,4 +12,8 @@ public class InfoHolder {
     {
         System.out.println("Parent of the child is : "+this.array);
     }
+    public void printRoot ()
+    {
+        System.out.println("Reached root : "+this.array);
+    }
 }

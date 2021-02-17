@@ -25,6 +25,13 @@ public class BinaryTree {
     {
 
     }
+    public void printTree ()
+    {
+        for (int i=array.length;i>=0;i--)
+        {
+            System.out.println(" ");
+        }
+    }
     public void printData (String str)
     {
         System.out.println("Child is : "+str);
@@ -37,7 +44,7 @@ public class BinaryTree {
         {
             if (this.array[i]==null)
             {
-                System.out.println("Index null");
+                System.out.println("Parent is null");
                 break;
             }
             else if (this.array[i].equals(str))
@@ -51,16 +58,24 @@ public class BinaryTree {
 
         while (true)
         {
-            positionCounter=positionCounter/2;
-            if (positionCounter==1)
-            {
-                obj[0].printParent();
-                break;
-            }
-            else
-            {
-                obj[positionCounter-1].printParent();
-            }
+                positionCounter=positionCounter/2;
+                if (positionCounter==1)
+                {
+                    obj[0].printParent();
+                    break;
+                }
+                else
+                {
+                    if (positionCounter!=0)
+                    {
+                        obj[positionCounter-1].printParent();
+                    }
+                    else
+                    {
+                        obj[0].printRoot();
+                        break;
+                    }
+                }
         }
     }
 }

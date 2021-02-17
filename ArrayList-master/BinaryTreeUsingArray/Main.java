@@ -8,7 +8,7 @@ public class Main {
         BinaryTree obj = new BinaryTree();
         while (true)
         {
-            System.out.println("Enter string : ");
+            System.out.println("Enter string (b for break , p for print data else add other strings): ");
             String str = input.next();
             if (str.equals("b"))
             {
