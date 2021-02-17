@@ -1,7 +1,7 @@
 package BinaryTreeUsingArray;
 import java.util.*;
 public class BinaryTree {
-    public int arraySize=8;
+    public int arraySize=15;
     String[] array = new String[arraySize];
     int nodeCounter = 0;
     public int treeIndex;
@@ -28,16 +28,25 @@ public class BinaryTree {
     }
     public void printTree ()
     {
-        for (int i=array.length;i>0;i--)
+        //1st print lines which is level indicator
+        for (int i=1;i<=levelCounter();i++)
         {
-            for (int j=1;j<i;j++)
+            for (int k=(levelCounter()-i+1);k<=1;k--)
             {
-                System.out.print("   ");
+                System.out.print(" ");
             }
-
-            System.out.print(array[array.length-i]);
+            //second loop array printer
+            for (int j=0;j<Math.pow(2,(i-1));j++)
+            {
+                System.out.print(array[(int) Math.pow(2,(i-1))+j-1]);
+                System.out.print(" ");
+            }
             System.out.println();
         }
+    }
+    public int levelCounter ()
+    {
+        return 3;
     }
     public void printData (String str)
     {
