@@ -31,10 +31,6 @@ public class BinaryTree {
         //1st print lines which is level indicator
         for (int i=1;i<=levelCounter();i++)
         {
-            for (int k=(levelCounter()-i+1);k<=1;k--)
-            {
-                System.out.print(" ");
-            }
             //second loop array printer
             for (int j=0;j<Math.pow(2,(i-1));j++)
             {
