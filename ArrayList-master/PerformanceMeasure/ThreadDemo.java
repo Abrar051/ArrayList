@@ -10,7 +10,7 @@ class ThreadDemo extends Thread {
 
     public void run() {
         //process
-        obj.NormalSearch(3);
+        System.out.println(obj.NormalSearch(3));
     }
 
     public void start() {

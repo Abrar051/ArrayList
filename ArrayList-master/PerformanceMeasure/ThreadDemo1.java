@@ -10,7 +10,7 @@ class ThreadDemo1 extends Thread {
 
     public void run() {
         //process
-        obj.BinarySearch(3);
+        System.out.println(obj.BinarySearch(3));
     }
 
     public void start() {
