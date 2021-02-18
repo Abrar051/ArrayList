@@ -1,5 +1,5 @@
 package PerformanceMeasure;
 
-public interface BinarySort {
+public interface BinarySearch {
     public int BinarySearch (int number);
 }

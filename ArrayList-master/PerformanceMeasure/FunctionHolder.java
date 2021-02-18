@@ -1,6 +1,6 @@
 package PerformanceMeasure;
 import java.util.*;
-public class FunctionHolder implements BinarySort,NormalSort{
+public class FunctionHolder implements BinarySearch,NormalSearch {
     private int[] array = new int[5];
     Scanner input = new Scanner(System.in);
     public void takeInput ()

@@ -1,5 +1,5 @@
 package PerformanceMeasure;
 
-public interface NormalSort {
+public interface NormalSearch {
     public int NormalSearch (int number);
 }
