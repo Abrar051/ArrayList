@@ -5,7 +5,7 @@ public class Main {
     {
         FunctionHolder obj = new FunctionHolder();
         obj.takeInput();
-        obj.compare(obj.NormalSort(3),obj.BinarySort(3));
+        obj.compare(obj.NormalSearch(3),obj.BinarySearch(3));
         obj.printData();
     }
 }

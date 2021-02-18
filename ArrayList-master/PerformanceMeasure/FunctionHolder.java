@@ -11,7 +11,7 @@ public class FunctionHolder implements BinarySort,NormalSort{
         }
     }
     @Override
-    public int BinarySort(int number) {
+    public int BinarySearch(int number) {
         //at first sort then search
         long time = System.nanoTime();
         swap();
@@ -58,7 +58,7 @@ public class FunctionHolder implements BinarySort,NormalSort{
         System.out.println(Arrays.toString(this.array));
     }
     @Override
-    public int NormalSort(int number) {
+    public int NormalSearch(int number) {
         long time = System.nanoTime();
         for (int i=0;i<5;i++)
         {
