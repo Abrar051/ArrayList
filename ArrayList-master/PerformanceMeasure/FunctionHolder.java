@@ -13,8 +13,8 @@ public class FunctionHolder implements BinarySort,NormalSort{
     @Override
     public int BinarySort(int number) {
         //at first sort then search
-        swap();
         long time = System.nanoTime();
+        swap();
         binarySearch(this.array,this.array[0],this.array[4],3);
         long newTime = System.nanoTime()-time;
         return (int) newTime;
