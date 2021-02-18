@@ -3,6 +3,7 @@ import java.util.*;
 public class BinaryTree {
     public int arraySize=15;
     String[] array = new String[arraySize];
+    //String array = {"","",""};
     int nodeCounter = 0;
     public int treeIndex;
     //n node indicator
@@ -34,15 +35,19 @@ public class BinaryTree {
             //second loop array printer
             for (int j=0;j<Math.pow(2,(i-1));j++)
             {
+                for (int n=0;n<levelCounter()-i;n++)
+                {
+                    System.out.print(" ");
+                }
                 System.out.print(array[(int) Math.pow(2,(i-1))+j-1]);
-                System.out.print(" ");
+                //System.out.print(" ");
             }
             System.out.println();
         }
     }
     public int levelCounter ()
     {
-        return 3;
+        return 6;
     }
     public void printData (String str)
     {
@@ -69,24 +74,24 @@ public class BinaryTree {
 
         while (true)
         {
-                positionCounter=positionCounter/2;
-                if (positionCounter==1)
+            positionCounter=positionCounter/2;
+            if (positionCounter==1)
+            {
+                obj[0].printParent();
+                break;
+            }
+            else
+            {
+                if (positionCounter!=0)
                 {
-                    obj[0].printParent();
-                    break;
+                    obj[positionCounter-1].printParent();
                 }
                 else
                 {
-                    if (positionCounter!=0)
-                    {
-                        obj[positionCounter-1].printParent();
-                    }
-                    else
-                    {
-                        obj[0].printRoot();
-                        break;
-                    }
+                    obj[0].printRoot();
+                    break;
                 }
+            }
         }
     }
 }
