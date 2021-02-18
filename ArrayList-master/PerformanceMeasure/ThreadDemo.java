@@ -1,6 +1,4 @@
-package thread;
-
-import PerformanceMeasure.FunctionHolder;
+package PerformanceMeasure;
 
 class ThreadDemo extends Thread {
     private Thread t;
@@ -11,6 +9,7 @@ class ThreadDemo extends Thread {
     }
 
     public void run() {
+        //process
         obj.NormalSearch(3);
     }
 

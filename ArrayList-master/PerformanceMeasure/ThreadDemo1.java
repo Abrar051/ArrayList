@@ -1,17 +1,16 @@
-package thread;
+package PerformanceMeasure;
 
-import PerformanceMeasure.FunctionHolder;
-
-class ThreadDemo extends Thread {
+class ThreadDemo1 extends Thread {
     private Thread t;
     private String threadName;
     FunctionHolder obj = new FunctionHolder();
-    ThreadDemo(String name) {
+    ThreadDemo1(String name) {
         threadName = name;
     }
 
     public void run() {
-        obj.NormalSearch(3);
+        //process
+        obj.BinarySearch(3);
     }
 
     public void start() {
