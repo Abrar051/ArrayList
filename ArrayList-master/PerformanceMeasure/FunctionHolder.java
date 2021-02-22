@@ -7,7 +7,7 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
     public void takeInput ()
     {
         System.out.println("Enter 5 elements : ");
-        for (int i=0;i<5;i++)
+        for (int i=0;i< array.length;i++)
         {
             this.array[i]=input.nextInt();
         }
@@ -99,8 +99,8 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
     }
     public void compare (long normal , long binary)
     {
-        System.out.println("Normal search took time "+normal);
-        System.out.println("Binary search took time "+binary);
+        System.out.println("Normal search took time "+normal+ " milliseconds");
+        System.out.println("Binary search took time "+binary+ " milliseconds");
         if (normal>binary)
         {
             System.out.println("Normal sort took more time");
