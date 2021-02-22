@@ -17,6 +17,14 @@ public class ThreadDemo extends Thread{
     public void run() {
         //process
         //obj.search(this.threadName,this.number);
+        if (this.threadName.equals("Normal"))
+        {
+
+        }
+        else if (this.threadName.equals("Binary"))
+        {
+
+        }
     }
 
     public long getTime ()
