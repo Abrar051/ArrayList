@@ -6,8 +6,8 @@ public class Main {
         FunctionHolder obj = new FunctionHolder();
         obj.takeInput();
         //obj.printData();
-        ThreadDemo t1 = new ThreadDemo("Normal",3);
-        ThreadDemo t2 = new ThreadDemo("Binary",3);
+        ThreadDemo t1 = new ThreadDemo("Normal",8);
+        ThreadDemo t2 = new ThreadDemo("Binary",8);
         obj.compare(t1.getTime(),t2.getTime());
     }
 }

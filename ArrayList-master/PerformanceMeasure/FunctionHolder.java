@@ -1,12 +1,13 @@
 package PerformanceMeasure;
 import java.util.*;
 public class FunctionHolder implements BinarySearch,NormalSearch {
-    private int[] array = new int[5];
+    public int arraySize=10;
+    private int[] array = new int[arraySize];
     public long runTime;
     Scanner input = new Scanner(System.in);
     public void takeInput ()
     {
-        System.out.println("Enter 5 elements : ");
+        System.out.println("Enter "+this.array.length+" elements : ");
         for (int i=0;i< array.length;i++)
         {
             this.array[i]=input.nextInt();
@@ -89,7 +90,7 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
     }
 
     public void NormalSearch(int number) {
-        for (int i=0;i<5;i++)
+        for (int i=0;i<array.length;i++)
         {
             if (this.array[i]==number)
             {
