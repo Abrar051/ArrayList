@@ -1,5 +1,5 @@
 package PerformanceMeasure;
 
 public interface BinarySearch {
-    public int BinarySearch (int number);
+    public void search (String type , int number);
 }

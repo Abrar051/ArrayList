@@ -1,5 +1,5 @@
 package PerformanceMeasure;
 
 public interface NormalSearch {
-    public int NormalSearch (int number);
+    public void search (String str , int number);
 }

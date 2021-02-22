@@ -3,14 +3,16 @@ package PerformanceMeasure;
 class ThreadDemo extends Thread {
     private Thread t;
     private String threadName;
+    private int number;
     FunctionHolder obj = new FunctionHolder();
     ThreadDemo(String name) {
-        threadName = name;
+        this.threadName = name;
+        this.number = number;
     }
 
     public void run() {
         //process
-        System.out.println(obj.NormalSearch(3));
+        obj.search(this.threadName,this.number);
     }
 
     public void start() {
