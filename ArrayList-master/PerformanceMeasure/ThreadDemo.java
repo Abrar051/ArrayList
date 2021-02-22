@@ -13,13 +13,17 @@ class ThreadDemo extends Thread {
 
     public void run() {
         //process
-        this.runTime = obj.search(this.threadName,this.number);
-        return;
+        obj.search(this.threadName,this.number);
     }
 
     public long getTime ()
     {
-        return this.runTime;
+        start();
+        long time = System.nanoTime();
+        obj.search(this.threadName,this.number);
+        long newTime = System.nanoTime()-time;
+        t.interrupt();
+        return newTime;
     }
 
     public void start() {

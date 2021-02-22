@@ -12,23 +12,19 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
             this.array[i]=input.nextInt();
         }
     }
-    public long BinarySearch(int number) {
+    public void BinarySearch(int number) {
         //at first sort then search
-        long time = System.nanoTime();
         swap();
         binarySearch(this.array,number);
-        long newTime = System.nanoTime()-time;
-        return newTime;
     }
 
     @Override
-    public long search(String type, int number) {
+    public void search(String type, int number) {
         if (type.equals("Normal"))
-            this.runTime = NormalSearch(number);
+            NormalSearch(number);
         else if (type.equals("Binary"))
-            this.runTime = BinarySearch(number);
+            BinarySearch(number);
 
-        return this.runTime;
     }
     public static boolean binarySearch(int[] array, int value)  {
         int start = 0;
@@ -92,8 +88,7 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
         System.out.println(Arrays.toString(this.array));
     }
 
-    public long NormalSearch(int number) {
-        long time = System.nanoTime();
+    public void NormalSearch(int number) {
         for (int i=0;i<5;i++)
         {
             if (this.array[i]==number)
@@ -101,11 +96,11 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
                 System.out.println("Normal sort match found");
             }
         }
-        long newTime = System.nanoTime()-time;
-        return newTime;
     }
     public void compare (long normal , long binary)
     {
+        System.out.println("Normal search took time "+normal);
+        System.out.println("Binary search took time "+binary);
         if (normal>binary)
         {
             System.out.println("Normal sort took more time");
