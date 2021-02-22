@@ -2,6 +2,7 @@ package PerformanceMeasure;
 import java.util.*;
 public class FunctionHolder implements BinarySearch,NormalSearch {
     private int[] array = new int[5];
+    public long runTime;
     Scanner input = new Scanner(System.in);
     public void takeInput ()
     {
@@ -11,49 +12,66 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
             this.array[i]=input.nextInt();
         }
     }
-    public int BinarySearch(int number) {
+    public long BinarySearch(int number) {
         //at first sort then search
         long time = System.nanoTime();
         swap();
-        binarySearch(this.array,this.array[0],this.array[4],3);
+        binarySearch(this.array,number);
         long newTime = System.nanoTime()-time;
-        return (int) newTime;
+        return newTime;
     }
 
     @Override
-    public void search(String type, int number) {
+    public long search(String type, int number) {
         if (type.equals("Normal"))
-        {
-            NormalSearch(number);
-        }
+            this.runTime = NormalSearch(number);
         else if (type.equals("Binary"))
-        {
-            BinarySearch(number);
-        }
-    }
+            this.runTime = BinarySearch(number);
 
+        return this.runTime;
+    }
+    public static boolean binarySearch(int[] array, int value)  {
+        int start = 0;
+        int end = array.length -1;
+
+        for (int i = 0; i < array.length; i++)   {
+            int middle = (end - start)/2;
+            if (array[i] == value)  {
+                System.out.println("Binary search match found");
+                return true;
+            }
+            else if (array[middle] > value)  {
+                end = middle - 1;
+            }
+            else    {
+                start = middle + 1;
+            }
+        }
+        return false;
+    }
     public static void binarySearch (int[]array , int first , int last , int searchItem)
     {
         int middle = (first + last) / 2;
         if ((last - first) == 1) {
             if (array[first] == searchItem) {
-                System.out.println("Binary sort match found");
+                System.out.println("Binary search match found");
             } else if (array[last] == searchItem) {
-                System.out.println("Binary sort match found");
+                System.out.println("Binary search match found");
             }
             return;
         }
         if (array[middle] == searchItem) {
-            System.out.println("Binary sort match found");
+            System.out.println("Binary search match found");
             return;
         }
+
         if (searchItem > array[middle])
         {
             binarySearch(array, middle, last, searchItem);
         }
-        else
+        else if (searchItem<array[middle])
         {
-            binarySearch(array, middle, last, searchItem);
+            binarySearch(array, first, middle, searchItem);
         }
     }
     public void swap ()
@@ -74,7 +92,7 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
         System.out.println(Arrays.toString(this.array));
     }
 
-    public int NormalSearch(int number) {
+    public long NormalSearch(int number) {
         long time = System.nanoTime();
         for (int i=0;i<5;i++)
         {
@@ -84,21 +102,24 @@ public class FunctionHolder implements BinarySearch,NormalSearch {
             }
         }
         long newTime = System.nanoTime()-time;
-        return (int) newTime;
+        return newTime;
     }
-    public void compare (int normal , int binary)
+    public void compare (long normal , long binary)
     {
         if (normal>binary)
         {
             System.out.println("Normal sort took more time");
+            return;
         }
         else if (normal==binary)
         {
             System.out.println("Both took same time");
+            return;
         }
         else
         {
             System.out.println("Binary took more time");
+            return;
         }
     }
 }

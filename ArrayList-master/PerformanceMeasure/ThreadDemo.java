@@ -1,18 +1,25 @@
 package PerformanceMeasure;
 
 class ThreadDemo extends Thread {
-    private Thread t;
+    public Thread t;
     private String threadName;
     private int number;
+    public long runTime;
     FunctionHolder obj = new FunctionHolder();
-    ThreadDemo(String name) {
+    ThreadDemo(String name , int number) {
         this.threadName = name;
         this.number = number;
     }
 
     public void run() {
         //process
-        obj.search(this.threadName,this.number);
+        this.runTime = obj.search(this.threadName,this.number);
+        return;
+    }
+
+    public long getTime ()
+    {
+        return this.runTime;
     }
 
     public void start() {
