@@ -19,11 +19,11 @@ public class ThreadDemo extends Thread{
         //obj.search(this.threadName,this.number);
         if (this.threadName.equals("Normal"))
         {
-
+            //process
         }
         else if (this.threadName.equals("Binary"))
         {
-
+            //process
         }
     }
 
