@@ -16,5 +16,6 @@ public class Main {
         //num1.search(number,array);
         ThreadClass t = new ThreadClass(array,number);
         t.compare.start();
+        t.interrupt();
     }
 }
