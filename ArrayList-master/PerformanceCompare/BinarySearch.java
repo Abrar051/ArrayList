@@ -37,11 +37,4 @@ public class BinarySearch implements Search{
                     array[j+1] = temp;
                 }
     }
-    public long getBinaryTime (int num,int[] array)
-    {
-        long time = System.nanoTime();
-        search(num, array);
-        long newTime = System.nanoTime()-time;
-        return newTime;
-    }
 }

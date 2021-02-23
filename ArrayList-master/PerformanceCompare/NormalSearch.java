@@ -13,13 +13,6 @@ public class NormalSearch implements Search {
             }
         }
     }
-    public long getNormalTime (int num,int[] array)
-    {
-        long time = System.nanoTime();
-        search(num,array);
-        long newTime = System.nanoTime()-time;
-        return newTime;
-    }
     public void getNormalIndex ()
     {
         System.out.println("Found after index : "+this.index);
