@@ -12,9 +12,9 @@ public class Main {
         obj.printArray();
         System.out.println("\nEnter number to search : ");
         int number = input.nextInt();
-        num.search(number,array);
-        //num.getNormalIndex();
-        num1.search(number,array);
-        obj.compare(num.getNormalTime(number,array),num1.getBinaryTime(number,array));
+        //num.search(number,array);
+        //num1.search(number,array);
+        ThreadClass t = new ThreadClass(array,number);
+        t.compare.start();
     }
 }
