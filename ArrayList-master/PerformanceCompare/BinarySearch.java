@@ -1,6 +1,13 @@
 package PerformanceCompare;
 
-public class BinarySearch implements Search{
+public class BinarySearch implements Search,Runnable{
+    public int number;
+    public int[] array;
+    BinarySearch (int number , int[] array)
+    {
+        this.number=number;
+        this.array=array;
+    }
     @Override
     public void search(int num , int[] array) {
         swap(array);
@@ -36,5 +43,10 @@ public class BinarySearch implements Search{
                     array[j] = array[j+1];
                     array[j+1] = temp;
                 }
+    }
+
+    @Override
+    public void run() {
+        search(this.number,this.array);
     }
 }
