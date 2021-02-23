@@ -4,14 +4,15 @@ public class Main {
     public static void main (String args[])
     {
         Scanner input = new Scanner(System.in);
-        int[] array = new int[10];
+        int[] array = new int[20];
         RandomArrayMaker obj = new RandomArrayMaker();
         array=obj.formArray();
         obj.printArray();
         System.out.println("\nEnter number to search : ");
         int num = input.nextInt();
-        ThreadDemo t1 = new ThreadDemo(array,num,"Binary");
-        ThreadDemo t2 = new ThreadDemo(array,num,"Normal");
-        obj.compare(t1.getTime(), t2.getTime());
+        Process obj1 = new Process(array,num);
+        obj.compare(obj1.getNormalTime(), obj1.getBinaryTime());
+        obj1.processStepNormal();
+        obj1.getBinarySwapTime();
     }
 }

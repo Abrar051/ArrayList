@@ -1,8 +1,9 @@
 package PerformanceMeasure2;
 import java.util.*;
 public class BinarySearch implements Search {
-    public int[] array = new int[10];
+    public int[] array = new int[20];
     public int searchItem;
+    private int swapStep=0;
     BinarySearch (int number , int[]array)
     {
         this.array=array;
@@ -12,21 +13,26 @@ public class BinarySearch implements Search {
     public void search(int number) {
         swap();
         binarySearch(this.array,number);
-        //System.out.println(Arrays.toString(this.array));
     }
-    public void swap ()
+
+    public int swap ()
     {
         int n = this.array.length;
         for (int i = 0; i < n-1; i++)
             for (int j = 0; j < n-i-1; j++)
-                if (array[j] > array[j+1])
+                if (this.array[j] > this.array[j+1])
                 {
                     //swap
-                    int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+                    int temp = this.array[j];
+                    this.array[j] = this.array[j+1];
+                    this.array[j+1] = temp;
+                    swapStep++;
                 }
-       // System.out.println(Arrays.toString(this.array));
+        return swapStep;
+    }
+    public void printSwapStep ()
+    {
+        System.out.println("Process step took : "+this.swapStep+" steps");
     }
     public static boolean binarySearch(int[] array, int value)  {
         int start = 0;
@@ -47,35 +53,6 @@ public class BinarySearch implements Search {
         }
         return false;
     }
-    /*public static void binarySearch (int[]array , int first , int last , int searchItem)
-    {
-        int middle = (first + last) / 2;
-        if ((last - first) == 1) {
-            if (array[first] == searchItem) {
-                System.out.println("Binary search match found");
-            } else if (array[last] == searchItem) {
-                System.out.println("Binary search match found");
-            }
-            return;
-        }
-        if (array[middle] == searchItem) {
-            System.out.println("Binary search match found");
-            return;
-        }
 
-        if (searchItem > array[middle]){
-            binarySearch(array, middle, last, searchItem);
-            System.out.println("Binary search match found");
-            return;
-        }
-        else if (searchItem<array[middle])
-        {
-            binarySearch(array, first, middle, searchItem);
-            System.out.println("Binary search match found");
-            return;
-        }
-
-
-    }*/
 
 }

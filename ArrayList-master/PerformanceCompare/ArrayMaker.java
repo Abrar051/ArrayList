@@ -1,14 +1,13 @@
-package PerformanceMeasure2;
+package PerformanceCompare;
 import java.util.*;
 
 import static java.lang.Math.abs;
 
-public class RandomArrayMaker {
+public class ArrayMaker {
     Random rand = new Random();
     int[] array = new int[20];
     int maximum = 50;
     int minimum = 1;
-
     public int[] formArray ()
     {
         int n = maximum - minimum + 1;
