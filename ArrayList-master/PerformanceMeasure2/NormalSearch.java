@@ -18,6 +18,5 @@ public class NormalSearch implements Search {
                 break;
             }
         }
-        System.out.println(Arrays.toString(this.array));
     }
 }

@@ -20,21 +20,31 @@ public class ThreadDemo extends Thread{
         if (this.threadName.equals("Normal"))
         {
             //process
+            obj2.search(this.number);
         }
         else if (this.threadName.equals("Binary"))
         {
             //process
+            obj1.search(this.number);
         }
     }
 
     public long getTime ()
     {
-        start();
-        long time = System.nanoTime();
-        //search(this.threadName,this.number);
-        long newTime = System.nanoTime()-time;
-        t.interrupt();
-        return newTime;
+        //process
+            start();
+            long time = System.nanoTime();
+            if (threadName.equals("Binary"))
+            {
+                obj1.search(this.number);
+            }
+            else if (threadName.equals("Normal"))
+            {
+                obj2.search(this.number);
+            }
+            long newTime = System.nanoTime()-time;
+            t.interrupt();
+            return newTime;
     }
 
     public void start() {

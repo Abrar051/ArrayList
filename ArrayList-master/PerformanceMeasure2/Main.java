@@ -6,12 +6,12 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int[] array = new int[10];
         RandomArrayMaker obj = new RandomArrayMaker();
-        obj.formArray();
+        array=obj.formArray();
         obj.printArray();
-        array= obj.getArray();
-        System.out.println("Enter number to search : ");
+        System.out.println("\nEnter number to search : ");
         int num = input.nextInt();
-        BinarySearch obj1 = new BinarySearch(num , array);
-        obj1.swap();
+        ThreadDemo t1 = new ThreadDemo(array,num,"Binary");
+        ThreadDemo t2 = new ThreadDemo(array,num,"Normal");
+        obj.compare(t1.getTime(), t2.getTime());
     }
 }
