@@ -13,7 +13,6 @@ public class BinarySearch implements Search{
         for (int i = 0; i < array.length; i++)   {
             int middle = (end - start)/2;
             if (array[i] == value)  {
-                System.out.println("Binary search match found");
                 return true;
             }
             else if (array[middle] > value)  {

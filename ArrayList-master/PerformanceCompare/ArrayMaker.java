@@ -5,8 +5,8 @@ import static java.lang.Math.abs;
 
 public class ArrayMaker {
     Random rand = new Random();
-    int[] array = new int[20];
-    int maximum = 50;
+    int[] array = new int[500];
+    int maximum = 500;
     int minimum = 1;
     public int[] formArray ()
     {
@@ -30,8 +30,8 @@ public class ArrayMaker {
     }
     public void compare (long normal , long binary)
     {
-        System.out.println("Normal search took time "+normal+ " milliseconds");
-        System.out.println("Binary search took time "+binary+ " milliseconds");
+        System.out.println("Normal search took time "+normal+ " nanoseconds");
+        System.out.println("Binary search took time "+binary+ " nanoseconds");
         if (normal>binary)
         {
             System.out.println("Normal sort took more time");

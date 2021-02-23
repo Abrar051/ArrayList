@@ -4,7 +4,7 @@ public class Main {
     public static void main (String args[])
     {
         Scanner input = new Scanner(System.in);
-        int[] array = new int[20];
+        int[] array = new int[500];
         ArrayMaker obj = new ArrayMaker();
         NormalSearch num = new NormalSearch();
         BinarySearch num1 = new BinarySearch();

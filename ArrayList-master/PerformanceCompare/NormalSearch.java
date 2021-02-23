@@ -8,7 +8,6 @@ public class NormalSearch implements Search {
         {
             if (array[i]==num)
             {
-                System.out.println("Normal sort match found");
                 this.index=i;
                 break;
             }
