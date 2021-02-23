@@ -32,7 +32,23 @@ public class ThreadClass extends Thread {
     {
         public void run ()
         {
-            maker.compare(obj.getBinaryTime(number,array),obj1.getNormalTime(number,array));
+            maker.compare(getNTime(),getBTime());
+        }
+        public long getNTime ()
+        {
+            long time = System.nanoTime();
+            normal.start();
+            long newTime = System.nanoTime()-time;
+            normal.interrupt();
+            return newTime;
+        }
+        public long getBTime ()
+        {
+            long time = System.nanoTime();
+            binary.start();
+            long newTime = System.nanoTime()-time;
+            binary.interrupt();
+            return newTime;
         }
     };
 

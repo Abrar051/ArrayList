@@ -12,8 +12,6 @@ public class Main {
         obj.printArray();
         System.out.println("\nEnter number to search : ");
         int number = input.nextInt();
-        //num.search(number,array);
-        //num1.search(number,array);
         ThreadClass t = new ThreadClass(array,number);
         t.compare.start();
         t.interrupt();
