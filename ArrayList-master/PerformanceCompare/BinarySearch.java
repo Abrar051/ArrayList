@@ -1,5 +1,5 @@
 package PerformanceCompare;
-
+import java.util.*;
 public class BinarySearch implements Search,Runnable{
     public int number;
     public int[] array;
@@ -10,9 +10,7 @@ public class BinarySearch implements Search,Runnable{
     }
     @Override
     public void search(int num , int[] array) {
-        int[] tempArray;
-        tempArray=swap(array);
-        binarySearch(num, tempArray);
+        binarySearch(num, swap(array));
     }
     public static boolean binarySearch(int value , int[] array)  {
         int start = 0;
@@ -32,6 +30,7 @@ public class BinarySearch implements Search,Runnable{
         }
         return false;
     }
+
     public int[] swap (int[] array)
     {
         int n = array.length;
