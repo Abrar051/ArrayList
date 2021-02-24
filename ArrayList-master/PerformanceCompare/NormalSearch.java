@@ -19,6 +19,7 @@ public class NormalSearch implements Search,Runnable {
                 break;
             }
         }
+        return;
     }
     public void getNormalIndex ()
     {

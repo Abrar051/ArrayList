@@ -10,8 +10,9 @@ public class BinarySearch implements Search,Runnable{
     }
     @Override
     public void search(int num , int[] array) {
-        swap(array);
-        binarySearch(num, array);
+        int[] tempArray;
+        tempArray=swap(array);
+        binarySearch(num, tempArray);
     }
     public static boolean binarySearch(int value , int[] array)  {
         int start = 0;
@@ -31,7 +32,7 @@ public class BinarySearch implements Search,Runnable{
         }
         return false;
     }
-    public void swap (int[] array)
+    public int[] swap (int[] array)
     {
         int n = array.length;
         for (int i = 0; i < n-1; i++)
@@ -43,6 +44,7 @@ public class BinarySearch implements Search,Runnable{
                     array[j] = array[j+1];
                     array[j+1] = temp;
                 }
+        return array;
     }
 
     @Override

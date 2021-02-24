@@ -19,7 +19,7 @@ public class ArrayMaker {
         }
         return this.array;
     }
-    public void printArray ()
+    public void printArray (int[] array)
     {
         System.out.print(" [ ");
         for (int i=0;i< array.length;i++)
@@ -42,7 +42,7 @@ public class ArrayMaker {
             System.out.println("Both took same time");
             return;
         }
-        else
+        else if (normal<binary)
         {
             System.out.println("Binary took more time");
             return;
