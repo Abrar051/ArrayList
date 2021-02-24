@@ -17,8 +17,8 @@ public class Main {
         int number = input.nextInt();
         NormalSearch num = new NormalSearch(number,array);
         BinarySearch num1 = new BinarySearch(number,tempArray);
-        Thread t1 = new Thread (num); //normal
-        Thread t2 = new Thread (num1);//binary
+        Thread t1 = new Thread ((Runnable) num); //normal
+        Thread t2 = new Thread ((Runnable) num1);//binary
         obj.compare(timeCompare.getTime(t1), timeCompare.getTime(t2));
         System.out.println("Sorted list : ");
         obj.printArray(num1.swap(array));

@@ -1,6 +1,6 @@
 package PerformanceCompare;
 import java.util.*;
-public class BinarySearch implements Search,Runnable{
+public class BinarySearch implements Search{
     public int number;
     public int[] array;
     BinarySearch (int number , int[] array)
@@ -46,7 +46,7 @@ public class BinarySearch implements Search,Runnable{
         return array;
     }
 
-    @Override
+
     public void run() {
         search(this.number,this.array);
     }

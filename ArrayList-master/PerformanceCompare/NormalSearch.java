@@ -1,6 +1,6 @@
 package PerformanceCompare;
 
-public class NormalSearch implements Search,Runnable {
+public class NormalSearch implements Search{
     public int index;
     public int number;
     public int[] array;
@@ -26,7 +26,7 @@ public class NormalSearch implements Search,Runnable {
         System.out.println("Found after index : "+this.index);
     }
 
-    @Override
+
     public void run() {
         search(number,array);
     }
