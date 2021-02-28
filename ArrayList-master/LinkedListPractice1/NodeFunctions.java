@@ -18,9 +18,11 @@ public class NodeFunctions {
     }
     public void print ()
     {
-        while (head!=null)
+        Node current = head;
+        while (current!=null)
         {
-            System.out.println();
+            System.out.println(current.data);
+            current=current.next;
         }
     }
 }

@@ -6,5 +6,6 @@ public class Main {
         NodeFunctions obj = new NodeFunctions();
         obj.add(1);
         obj.add(2);
+        obj.print();
     }
 }
