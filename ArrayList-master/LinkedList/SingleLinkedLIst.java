@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SingleLinkedLIst {
+    int data;
+    int position=1;
     public Node head = null;
     public Node tail = null;
     ArrayList obj = new ArrayList();
@@ -12,13 +14,30 @@ public class SingleLinkedLIst {
         if (head==null)
         {
             head = newNode;
-            tail = newNode;
         }
         else
         {
             tail.next = newNode;
-            tail = newNode ;
         }
+        tail = newNode;
+    }
+    public void forwardDisplay ()
+    {
+        Node current = head;
+        if (head==null)
+        {
+            System.out.println("List is empty");
+        }
+        else {
+            System.out.println(current.data);
+            current=current.next;
+            position++;
+        }
+
+    }
+    public void backwardDisplay ()
+    {
+
     }
     public void display ()
     {
@@ -50,15 +69,5 @@ public class SingleLinkedLIst {
         {
             System.out.print(obj.get(i)+" ");
         }
-    }
-    public static void main (String[] args)
-    {
-        SingleLinkedLIst obj = new SingleLinkedLIst();
-        obj.addNode(1);
-        obj.addNode(2);
-        obj.addNode(3);
-        obj.addNode(4);
-        obj.display();
-        obj.reverseDisplay();
     }
 }

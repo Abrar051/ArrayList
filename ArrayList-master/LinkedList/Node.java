@@ -7,6 +7,6 @@ class Node {
     public Node(int data) {
         this.data = data;
         this.next = null;
-        previous = null;
+        //previous = null;
     }
 }
