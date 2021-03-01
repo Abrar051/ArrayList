@@ -2,3 +2,21 @@ At first learn about linked list
 second make a reverse display system
 double linked list
 third task make a system to move forward and backward
+
+create a subclass name node
+
+public class Node {
+int data;
+Node next;
+}
+
+then make a class holding the methods of linked list
+
+public class LinkedList {
+Node head;
+public void insert (int data)
+{
+Node node = new Node (data);
+node.data = data;
+}
+}

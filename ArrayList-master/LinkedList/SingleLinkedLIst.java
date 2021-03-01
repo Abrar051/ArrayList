@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class SingleLinkedLIst {
     int data;
     int position=1;
+    int length=1;
     public Node head = null;
     public Node tail = null;
     ArrayList obj = new ArrayList();
@@ -20,6 +21,7 @@ public class SingleLinkedLIst {
             tail.next = newNode;
         }
         tail = newNode;
+        length++;
     }
     public void forwardDisplay ()
     {
@@ -27,16 +29,49 @@ public class SingleLinkedLIst {
         if (head==null)
         {
             System.out.println("List is empty");
+            return;
         }
-        else {
-            System.out.println(current.data);
-            current=current.next;
-            position++;
+        else
+        {
+            for (int i=0;i<position ; i++)
+            {
+                current=current.next;
+                if (i==(position-1))
+                {
+                    System.out.print(current.data+" ");
+                }
+            }
+            System.out.println();
         }
+
+
+        this.position++;
 
     }
     public void backwardDisplay ()
     {
+        this.position--;
+        Node current = head;
+        if (head==null)
+        {
+            System.out.println("List is empty");
+            return;
+        }
+        else
+        {
+            for (int i=0;i<position ; i++)
+            {
+                current=current.next;
+                if (i==(position-1))
+                {
+                    System.out.print(current.data+" ");
+                }
+            }
+            System.out.println();
+        }
+
+
+
 
     }
     public void display ()
@@ -55,19 +90,45 @@ public class SingleLinkedLIst {
         }
         System.out.println();
     }
-
-    public void reverseDisplay ()
+    Node reverse(Node node)
     {
-        Node current = head;
-        while (current!=null)
-        {
-            obj.add(current.data);
-            current=current.next;
+        Node prev = null;
+        Node current = node;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
-        int length = obj.size();
-        for (int i=length-1;i>=0;i--)
-        {
-            System.out.print(obj.get(i)+" ");
+        node = prev;
+        return node;
+    }
+
+    // prints content of double linked list
+    public void reverseDisplay(Node node)
+    {
+        reverse(head);
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
         }
     }
+
+
+   /* public void reverseDisplay ()
+    {
+        Node prev = null;
+        Node current=head;
+        Node next = null;
+        while (current!=null)
+        {
+            next=current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+        }
+        head=prev;
+        System.out.print(Arrays.toString(new Node[]{head}));
+    }*/
 }

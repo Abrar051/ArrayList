@@ -12,6 +12,10 @@ public class Main {
         obj.display();
         obj.forwardDisplay();
         obj.forwardDisplay();
-        obj.reverseDisplay();
+        obj.forwardDisplay();
+        obj.backwardDisplay();
+        obj.backwardDisplay();
+        //obj.reverse(obj.head);
+        obj.reverseDisplay(obj.tail);
     }
 }
