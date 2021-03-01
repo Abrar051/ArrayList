@@ -7,6 +7,7 @@ public class Main {
         obj.addNode(1);
         obj.addNode(2);
         obj.addNode(3);
+        obj.addInMid(6);
         obj.addNode(4);
         obj.addNode(5);
         obj.display();
@@ -15,7 +16,6 @@ public class Main {
         obj.forwardDisplay();
         obj.backwardDisplay();
         obj.backwardDisplay();
-        //obj.reverse(obj.head);
         obj.reverseDisplay(obj.tail);
     }
 }

@@ -7,6 +7,7 @@ public class SingleLinkedLIst {
     int data;
     int position = 1;
     int length = 1;
+    public int size;
     public Node head = null;
     public Node tail = null;
     ArrayList obj = new ArrayList();
@@ -20,6 +21,7 @@ public class SingleLinkedLIst {
         }
         tail = newNode;
         length++;
+        size++;
     }
 
     public void forwardDisplay() {
@@ -90,8 +92,28 @@ public class SingleLinkedLIst {
         node = prev;
         return node;
     }
+///add mid
+public void addInMid(int data){
 
-    // prints content of double linked list
+    Node newNode = new Node(data);
+    if(this.head == null) {
+        this.head = newNode;
+        this.tail = newNode;
+    }
+    else {
+        Node temp, current;
+        int count = (size % 2 == 0) ? (size/2) : ((size+1)/2);
+        temp = head;
+        current = null;
+        for(int i = 0; i < count; i++) {
+            current = temp;
+            temp = temp.next;
+        }
+        current.next = newNode;
+        newNode.next = temp;
+    }
+    size++;
+}
     public void reverseDisplay(Node node) {
         reverse(head);
         while (node != null) {
