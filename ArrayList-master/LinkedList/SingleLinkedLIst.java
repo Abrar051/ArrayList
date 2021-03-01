@@ -92,7 +92,7 @@ public class SingleLinkedLIst {
         node = prev;
         return node;
     }
-///add mid
+
 public void addInMid(int data){
 
     Node newNode = new Node(data);
