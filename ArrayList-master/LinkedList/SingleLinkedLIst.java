@@ -63,8 +63,20 @@ public class SingleLinkedLIst {
 
     }
 
-    public void backDisplay() {
-
+    public void backDisplay() {this.position--;
+        Node current = head;
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        } else {
+            for (int i = 0; i < position; i++) {
+                current = current.next;
+                if (i == (position - 1)) {
+                    System.out.print(current.data + " ");
+                }
+            }
+            System.out.println();
+        }
     }
 
     public void display() {
