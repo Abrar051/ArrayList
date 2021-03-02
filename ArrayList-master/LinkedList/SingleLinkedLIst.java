@@ -94,9 +94,27 @@ public class SingleLinkedLIst {
         node = prev;
         return node;
     }
-    public void add (int data , int position)
+    public void addNode (int data , int position)
     {
-
+        Node newNode = new Node (data);
+        if (head==null)
+        {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else
+        {
+            Node temp, current;
+            int count = position;
+            temp = head;
+            current = null;
+            for (int i = 0; i < count; i++) {
+                current = temp;
+                temp = temp.next;
+            }
+            current.next = newNode;
+            newNode.next = temp;
+        }
     }
     public void addInMid(int data) {
 
