@@ -161,7 +161,28 @@ public class SingleLinkedLIst {
         return pointer;
 
     }
-    public void remove (int data)
+    public void searchNode(int data) {
+        Node current = head;
+        int i = 1;
+        boolean flag = false;
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        else {
+            while(current != null) {
+                if(current.data == data) {
+                    flag = true;
+                    break;
+                }
+                i++;
+                current = current.next;
+            }
+        }
+
+    }
+
+    /*public void remove (int data)
     {
         Node pointer = new Node(data);
         Node temp,current;
@@ -174,15 +195,14 @@ public class SingleLinkedLIst {
 
             }
         }
-    }
-    /*public void remove (int position) {
+    }*/
+    public void remove (int position) {
         Node temp, current;
         if(head == null) {
             System.out.println("List is empty");
             return;
         }
         else {
-
             if( head != tail ) {
                 temp = head;
                 current = null;
@@ -204,5 +224,5 @@ public class SingleLinkedLIst {
             }
         }
         size--;
-    }*/
+    }
 }
