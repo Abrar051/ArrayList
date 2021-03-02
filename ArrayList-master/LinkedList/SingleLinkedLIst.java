@@ -161,18 +161,32 @@ public class SingleLinkedLIst {
         return pointer;
 
     }
-    public void remove (int position) {
+    public void remove (int data)
+    {
+        Node pointer = new Node(data);
+        Node temp,current;
+        while (true)
+        {
+            if (pointer.next==null)
+                break;
+            else if (pointer.data==data)
+            {
+
+            }
+        }
+    }
+    /*public void remove (int position) {
         Node temp, current;
         if(head == null) {
             System.out.println("List is empty");
             return;
         }
         else {
-            int count = position; //checking if had and tail is same
+
             if( head != tail ) {
                 temp = head;
                 current = null;
-                for(int i = 0; i < count-1; i++){
+                for(int i = 0; i < position-1; i++){
                     current = temp;
                     temp = temp.next;
                 }
@@ -190,5 +204,5 @@ public class SingleLinkedLIst {
             }
         }
         size--;
-    }
+    }*/
 }
