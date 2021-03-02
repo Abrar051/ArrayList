@@ -94,7 +94,10 @@ public class SingleLinkedLIst {
         node = prev;
         return node;
     }
+    public void add (int data , int position)
+    {
 
+    }
     public void addInMid(int data) {
 
         Node newNode = new Node(data);
@@ -140,7 +143,7 @@ public class SingleLinkedLIst {
         return pointer;
 
     }
-    void remove (int position) {
+    public void remove (int position) {
         Node temp, current;
         if(head == null) {
             System.out.println("List is empty");
