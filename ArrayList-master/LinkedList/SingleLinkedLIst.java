@@ -173,13 +173,12 @@ public class SingleLinkedLIst {
         return pointer;
 
     }
-    public void searchNode(int data) {
+    public int searchNode(int data) {
         Node current = head;
         int i = 1;
         boolean flag = false;
         if(head == null) {
             System.out.println("List is empty");
-            return;
         }
         else {
             while(current != null) {
@@ -191,25 +190,53 @@ public class SingleLinkedLIst {
                 current = current.next;
             }
         }
-
+        return i;
     }
 
     /*public void remove (int data)
     {
-        Node pointer = new Node(data);
+        Node pointer = findNode(data);
         Node temp,current;
-        while (true)
+        if (head==null)
         {
-            if (pointer.next==null)
-                break;
-            else if (pointer.data==data)
+            System.out.println("List is empty");
+            return;
+        }
+        else
+        {
+            if (head!=tail)
             {
-
+                temp = head;
+                current = null;
+                while (true)
+                {
+                    current=temp;
+                    temp=temp.next;
+                    if (current==pointer)
+                    {
+                        current.next=temp.next;
+                        temp=null;
+                        break;
+                    }
+                    else
+                    {
+                        head = tail = temp.next;
+                        temp = null;
+                    }
+                }
+            }
+            else
+            {
+                head=tail=null;
             }
         }
+        size--;
     }*/
-    public void remove (int position) {
+    public void remove (int data) {
         Node temp, current;
+        Node pointer = findNode(data);
+        int i=0;
+        int position = searchNode (data);
         if(head == null) {
             System.out.println("List is empty");
             return;
@@ -218,9 +245,14 @@ public class SingleLinkedLIst {
             if( head != tail ) {
                 temp = head;
                 current = null;
-                for(int i = 0; i < position-1; i++){
+                while (true)
+                {
+                    i++;
                     current = temp;
                     temp = temp.next;
+                    if (i==(position-1)) {
+                        break;
+                    }
                 }
                 if(current != null) {
                     current.next = temp.next;

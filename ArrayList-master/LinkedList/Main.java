@@ -17,7 +17,7 @@ public class Main {
         obj.forwardDisplay();
         obj.backwardDisplay();
         obj.backwardDisplay();
-        obj.remove(4);
+        obj.remove(3);
         obj.display();
         obj.reverseDisplay(obj.tail);
     }
